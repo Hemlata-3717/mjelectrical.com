@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Event Example</title>
+    <style>
+        /* Add your styles here */
+        .scrolled {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body style="height:200vh">
+
+    <!-- Your content goes here -->
+    <div id="myElement" style="margin-top: 800px;">This is my element</div>
+
+    <script>
+        // Get the element you want to modify
+        var myElement = document.getElementById('myElement');
+
+        // Function to add a class when the page is scrolled
+        function handleScroll() {
+            // Adjust the scroll threshold as needed
+            var scrollThreshold = 100;
+
+            // Check if the vertical scroll position is below the threshold
+            if (window.scrollY > scrollThreshold) {
+                // Add the class when scrolled
+                myElement.classList.add('scrolled');
+            } else {
+                // Remove the class when not scrolled
+                myElement.classList.remove('scrolled');
+            }
+        }
+
+        // Attach the scroll event listener to the window
+        window.addEventListener('scroll', handleScroll);
+    </script>
+
+</body>
+
+</html>
